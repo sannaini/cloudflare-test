@@ -1,164 +1,414 @@
 <!doctype html>
 <html lang="en">
-
-
-<head>
- 
-</head>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Notion Thrive | Build Your Online Portfolio</title> 
-  
-  <meta name="description" content="Create your free portfolio website easily. Choose from modern templates, customize your content, and showcase your work to the world." />
-  <meta name="keywords" content="free portfolio, online portfolio, portfolio website, create portfolio, personal website, free website builder" />
-  <meta name="author" content="Notion Thrive" />
-
-  <!-- Open Graph (for social sharing previews) -->
-  <meta property="og:title" content="Free Portfolio Website | Build Your Online Portfolio" />
-  <meta property="og:description" content="Create your free online portfolio with ease. No coding required." />
-
-  <meta property="og:url" content="https://notionthrive.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Free Portfolio Website" />
-  <meta name="twitter:description" content="Build your own free portfolio online. Fast, customizable, and free." />
-
-
- 
-  <style>
-    :root {
-      --brand:#0f6cff;
-      --bg:#f9fafb;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --white:#ffffff;
-    }
-    *{box-sizing:border-box;}
-    body {
-      margin:0;
-      font-family: "Inter", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-    header {
-      background: var(--brand);
-      color: var(--white);
-      padding: 20px;
-      text-align:center;
-      box-shadow:0 2px 6px rgba(0,0,0,0.15);
-    }
-    header h1 {
-      margin:0;
-      font-size:1.8rem;
-      font-weight:700;
-    }
-    main {
-      max-width: 760px;
-      margin: 30px auto;
-      padding: 20px;
-    }
-    .card {
-      background: var(--white);
-      border-radius: 14px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.06);
-      padding: 24px;
-    }
-    h2 { margin-top:0; }
-    ol { padding-left:20px; }
-    .note {
-      background:#fef3c7;
-      border:1px solid #fde68a;
-      padding:12px;
-      border-radius:8px;
-      color:#92400e;
-      margin:16px 0;
-      font-size:0.95rem;
-    }
-    label {
-      display:block;
-      font-size:0.9rem;
-      margin-bottom:6px;
-      color: var(--muted);
-    }
-    input, textarea {
-      width:100%;
-      padding:10px 12px;
-      border:1px solid #d1d5db;
-      border-radius:8px;
-      margin-bottom:12px;
-      font-size:1rem;
-    }
-    button {
-      background: var(--brand);
-      color: var(--white);
-      border:none;
-      padding:12px 18px;
-      border-radius:10px;
-      cursor:pointer;
-      font-size:1rem;
-      font-weight:600;
-      margin-right:10px;
-    }
-    button:hover { opacity:0.9; }
-    .btn-alt {
-      background:transparent;
-      border:1px solid var(--brand);
-      color: var(--brand);
-    }
-    .small { font-size:0.85rem; color:var(--muted); margin-top:10px }
-    @media(max-width:640px) {
-      header h1 { font-size:1.4rem; }
-      .card { padding:16px; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Notion Thrive</h1>
-    <p style="margin:6px 0 0;font-size:1rem;">Free Portfolio Upload Service</p>
-  </header>
-
-  <main>
-    <div class="card">
-      <h2>Send us your portfolio</h2>
-      <p>
-        Just send your PDF portfolio to 
-        <strong id="email-text">notionthrive@gmail.com</strong>  
-        and you’ll receive a shareable link within 1 business day.
-      </p>
-
-      <button type="button" class="btn-alt" onclick="copyEmail()">📋 Copy Email</button>
-      <p id="copy-status" class="small" aria-live="polite"></p>
-
-      <h3>How it works</h3>
-      <ol>
-        <li>Compose an email to <strong>notionthrive@gmail.com</strong>.</li>
-        <li>Attach your PDF portfolio.</li>
-        <li>Send it, and will send back the portfolio link to your e-mail</li>
-      </ol>
-
-      <div class="note">
-        ⚠️ Reminder: This service is public. Only send work you want others to view.  
-        Do not include sensitive personal data in your portfolio.
-      </div>
-    </div>
-  </main>
-
-  <script>
-    const emailTo = "notionthrive@gmail.com";
-    const statusEl = document.getElementById("copy-status");
-
-    async function copyEmail() {
-      try {
-        await navigator.clipboard.writeText(emailTo);
-        statusEl.textContent = "✅ Email copied: " + emailTo;
-      } catch {
-        statusEl.textContent = "📧 Could not copy automatically. Email: " + emailTo;
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>HomeQC | Engineering Your Peace of Mind</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        --primary: #059669;
+        --primary-dark: #065f46;
+        --accent: #fbbf24;
+        --bg: #f0f4f8;
+        --text-main: #1e293b;
+        --text-light: #64748b;
+        --white: #ffffff;
+        --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
       }
-    }
-  </script>
-</body>
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text-main);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      /* Navigation */
+      nav {
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+      }
+      .logo {
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--primary);
+        letter-spacing: -1px;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-main);
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      /* Hero Section */
+      header {
+        padding: 120px 20px 80px;
+        text-align: center;
+        background:
+          radial-gradient(circle at top right, #ecfdf5, transparent),
+          radial-gradient(circle at bottom left, #f0fdf4, transparent);
+        position: relative;
+      }
+      .hero-badge {
+        background: rgba(5, 150, 105, 0.1);
+        color: var(--primary-dark);
+        padding: 6px 16px;
+        border-radius: 25px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      header h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        color: #0f172a;
+      }
+      header p {
+        max-width: 700px;
+        margin: 0 auto 40px;
+        font-size: 1.2rem;
+        color: var(--text-light);
+      }
+
+      /* Process Timeline */
+      .process-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+      .process-step {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(15px);
+        padding: 35px 25px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        position: relative;
+        transition: 0.4s;
+        border-top: 4px solid var(--primary);
+        cursor: default;
+      }
+      .process-step:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.1);
+      }
+      .step-num {
+        position: absolute;
+        top: -20px;
+        left: 25px;
+        background: var(--primary);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        box-shadow: 0 4px 10px rgba(5, 150, 105, 0.3);
+      }
+      .process-step h3 {
+        margin: 15px 0 10px;
+        font-size: 1.2rem;
+      }
+
+      /* Services Grid */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+      }
+      .service-card {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(15px);
+        padding: 25px 20px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        cursor: default;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+      }
+      .service-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      /* Section Headings */
+      section {
+        padding: 100px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .section-tag {
+        color: var(--primary);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        text-align: center;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 60px;
+        font-weight: 800;
+      }
+
+      /* CTA Section */
+      .cta-box {
+        background: rgba(15, 23, 42, 0.85);
+        color: white;
+        border-radius: 30px;
+        padding: 60px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+      }
+      .whatsapp-btn {
+        background: #25d366;
+        color: white;
+        padding: 18px 40px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1rem;
+        transition: 0.3s;
+      }
+      .whatsapp-btn:hover {
+        background: #1eb956;
+        transform: scale(1.05);
+      }
+
+      /* Animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: 0.8s all ease;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        header h1 {
+          font-size: 2rem;
+        }
+        section {
+          padding: 60px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">HomeQC</div>
+        <ul class="nav-links">
+          <li><a href="#qa-process">Our Process</a></li>
+          <li><a href="#services">Inspections</a></li>
+          <li><a href="#contact">Consultation</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <span class="hero-badge">India's #1 Home QA Service</span>
+      <h1>
+        Building a Home? <br /><span style="color: var(--primary)"
+          >Don't Build Blindly.</span
+        >
+      </h1>
+      <p>
+        We check your builder’s work to make sure your home is safe and built
+        right.
+      </p>
+      <div class="cta-container">
+        <a
+          href="#contact"
+          class="whatsapp-btn"
+          >Get Free Consultation</a
+        >
+      </div>
+    </header>
+
+    <section id="qa-process">
+      <span class="section-tag">Method</span>
+      <h2 class="section-title">The HomeQC Quality Shield</h2>
+
+      <div class="process-container">
+        <div class="process-step reveal">
+          <div class="step-num">1</div>
+          <h3>Milestone Audits</h3>
+          <p>
+            We inspect at important stages (Foundation, Slab, Masonry) to catch
+            mistakes early.
+          </p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">2</div>
+          <h3>Material Check</h3>
+          <p>
+            We test cement, steel, and sand on-site. No guessing, just real
+            testing.
+          </p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">3</div>
+          <h3>Digital Reports</h3>
+          <p>
+            Within 24 hours, get a clear PDF report with photos and pass/fail
+            checklist.
+          </p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">4</div>
+          <h3>Fix Verification</h3>
+          <p>
+            We provide solutions for problems and check that fixes are done
+            correctly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <span class="section-tag">Expertise</span>
+      <h2 class="section-title">Inspection Services</h2>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">🧱</div>
+          <h3>Foundation & RCC</h3>
+          <p>Check excavation depth, soil compaction, and steel placement.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🏗️</div>
+          <h3>Concrete & Formwork</h3>
+          <p>Ensure proper concrete mix and strong shuttering.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">💧</div>
+          <h3>Curing & Hydration</h3>
+          <p>Monitor curing to reach maximum strength.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">📐</div>
+          <h3>Wall & Plaster</h3>
+          <p>Check verticality, mortar, and crack-prevention.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">⚡</div>
+          <h3>MEP Systems</h3>
+          <p>Test hidden plumbing and electrical lines for safety.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">✨</div>
+          <h3>Pre-Handover Checks</h3>
+          <p>
+            Over 200 checks on tiles, paint, and alignments before final
+            payment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="cta-box reveal">
+        <h2>Ready to Build a Safe Home?</h2>
+        <p style="margin-bottom: 30px; opacity: 0.9">
+          Join 500+ homeowners who secured their investment with HomeQC India.
+        </p>
+        <a
+          href="https://wa.me/+919347315702"
+          class="whatsapp-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor">
+            <path
+              d="M12.031 6.172c-2.335 0-4.241 1.91-4.241 4.247 0 1.133.447 2.157 1.172 2.92l-.6 2.198 2.261-.59c.427.243.923.385 1.45.385 1.551 0 2.812-1.26 2.812-2.81 0-1.551-1.261-2.812-2.812-2.812h-.042zm6.969 4.035c0 3.861-3.129 6.99-6.989 6.99-1.157 0-2.247-.282-3.21-.779l-4.79 1.253 1.276-4.665c-.604-.974-.954-2.128-.954-3.364 0-3.86 3.129-6.989 6.989-6.989s6.989 3.129 6.989 6.989z" />
+          </svg>
+          Chat with an Engineer
+        </a>
+      </div>
+    </section>
+
+    <script>
+      // Reveal on scroll
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
